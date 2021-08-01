@@ -1,3 +1,5 @@
+// not using this anymore but when I delete it app doesn't run....REVISIT LATER
+
 import { makeStyles } from '@material-ui/core';
 
 makeStyles({

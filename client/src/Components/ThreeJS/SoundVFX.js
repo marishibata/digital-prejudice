@@ -1,7 +1,10 @@
 
+
 const SoundVFX = () => {
 
-  // ThreeJS audiolistener docs
+  // NO GRAPHICS YET JUST OUTLINING POSSIBLE AUDIO STRUCTURE
+
+  // ThreeJS docs AudioListener Method
   // https://threejs.org/docs/#api/en/audio/AudioListener
 
   const listener = new THREE.AudioListener();
@@ -13,7 +16,8 @@ const SoundVFX = () => {
 
   // load a sound and set it as the Audio object's buffer
   const audioLoader = new THREE.AudioLoader();
-  console.log("File from server :", localMp3Path); // File saved
+  // use this if file will be saved in server via saveTxt2mp3 controller
+  console.log("File from server :", localMp3Path);
   audioLoader.load(localMp3Path, function (buffer) {
     sound.setBuffer(buffer);
     sound.setLoop(true);
@@ -22,7 +26,7 @@ const SoundVFX = () => {
   });
 
 
-  // play multiple files 
+  // play multiple files
   for (let i = 0; i < audioFiles.length; i++) {
     audioLoader.load(audioFiles.get(i), function (buffer) {
       sound.setBuffer(buffer);

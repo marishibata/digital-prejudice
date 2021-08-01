@@ -1,23 +1,45 @@
 import React, { useEffect, useState } from 'react';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button'
-import { makeStyles } from '@material-ui/core';
+import {
+  StyledFormWrapper,
+  StyledForm,
+  StyledTextArea,
+  StyledButton
+} from '../../Styles/form.styles';
 
-import '../../Styles/makesStyles';
+const GlobalStyle = createGlobalStyle`
+  html {
+    height: 100%
+  }
 
-const useStyles = makeStyles();
+  body {
+    font-family: monospace; 
+    background: #000000;
+    height: 100%;
+    margin 0;
+  }
+ `;
+
+const sharedStyles = css`
+    background-color: #eee;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin: 10px 0 20px 0;
+    padding: 20px;
+    box-sizing: border-box;
+  `;
 
 
 const TextSubmission = ({ passToParent }) => {
-
-  const classes = useStyles();
 
   const [content, setContent] = useState(''); // was message, setMessage before
   const [messageError, setMessageError] = useState(false);
 
 
   const postTextHandler = async (e) => {
+
     e.preventDefault()
     setMessageError(false)
 
@@ -44,28 +66,18 @@ const TextSubmission = ({ passToParent }) => {
   }
 
   return (
-    <form noValidate autoComplete="off" onSubmit={postTextHandler}>
-      <TextField
-        onChange={(e) => setContent(e.target.value)}
-        label="Enter Text You Received"
-        variant="outlined"
-        multiline
-        rows={10}
-        fullWidth
-        required
-        error={messageError}
-      />
-
-      <Button
-        className={classes.btn}
-        type="submit"
-        color="primary"
-        variant="contained">
-        Submit
-      </Button>
-    </form>
+    <>
+      <GlobalStyle />
+      <StyledFormWrapper>
+        <StyledForm onSubmit={postTextHandler}>
+          <h4>Have you received racist texts on dating apps?</h4>
+          <label htmlFor="message"></label>
+          <StyledTextArea placeholder="Write what they sent here" name="message" onChange={(e) => setContent(e.target.value)} />
+          <StyledButton type="submit">Turn Text To Audio</StyledButton>
+        </StyledForm>
+      </StyledFormWrapper>
+    </>
   )
-
 };
 
 

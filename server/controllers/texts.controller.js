@@ -82,29 +82,13 @@ const saveTxt2mp3 = (content) => {
 }
 
 
-// currently not using, might need this if I need to to getAllText from DB to play audio via url
+// currently not using this boilerplate, might need this if I need to to get texts/mp3 links from DB to play audio via url
 const getText = async (req, res) => {
   try {
     const texts = await Text.find();
     res.status(200).send(texts);
   } catch (err) {
     res.status(400).send('unable to find text messages')
-  }
-}
-
-// originally created for Google TTS, audio generated during postText request
-const postNewAudio = async (req, res) => {
-  try {
-    const contentTTSURL = await getTextToSpeech(content);
-    const newAudio = Audio({
-      content: contentTTSURL,
-    })
-    await newAudio.save(); // this would be in cloudinary so don't need this??
-    res.status(200).send(newAudio);
-  }
-  catch (err) {
-    res.status(400);
-    console.error(err);
   }
 }
 

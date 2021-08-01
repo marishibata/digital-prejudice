@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useRef } from 'react';
 import '../AudioPlayer/AudioPlayer.css';
+import { FaPlay, FaPause } from "react-icons/fa";
 
-import { FaPlay, FaPause } from "react-icons/fa"; // INSTALL
 
 const AudioPlayer = ({ audiourl }) => {
 
