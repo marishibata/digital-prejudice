@@ -1,0 +1,31 @@
+{
+  "messages": [
+    {
+      "id": 1,
+      "content": "Sounds like an Asian profile. Your parents pushed you hard.",
+      "gender": "male",
+      "age": 35,
+      "location": "London, United Kingdom",
+      "occupation": "Unknown",
+      "ethnicity": "Black - Carribean"
+    },
+    {
+      "id": 2,
+      "content": "Did you make sure to add this photo to verify your heritage?",
+      "gender": "male",
+      "age": 38,
+      "location": "London, United Kingdom",
+      "occupation": "Software Developer",
+      "ethnicity": "White - British"
+    },
+    {
+      "id": 3,
+      "content": "Do you know Japanese bondage?",
+      "gender": "male",
+      "age": 34,
+      "location": "London",
+      "occupation": "Upholster",
+      "ethnicity": "White - European"
+    }
+  ]
+}

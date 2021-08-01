@@ -1,0 +1,21 @@
+/* REFACTOR LATER AS THIS IS SAME AS WHAT'S IN APP.CSS*/
+
+.Description {
+  text-align: center;
+}
+
+.Description-body {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  font-family: monospace;
+  color: white;
+}
+
+.Description-link {
+  color: #b6e67bcb;
+}

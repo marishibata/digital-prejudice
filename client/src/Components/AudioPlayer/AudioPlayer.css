@@ -1,0 +1,29 @@
+.audioPlayer {
+  --primary: #b6e67bcb;
+  --secondary: black;
+
+  align-items: center;
+  display: flex;
+  width: 700px;
+}
+
+.playPause {
+  background: var(--primary);
+  border: none;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  font-size: 32px;
+  color: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play {
+  position: relative;
+  left: 4px;
+}
+
+
+
