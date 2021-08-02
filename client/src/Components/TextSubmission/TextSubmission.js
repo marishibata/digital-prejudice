@@ -58,6 +58,19 @@ const TextSubmission = ({ passToParent }) => {
       const data = await res.json();
       passToParent(data);
       console.log(data, 'after fetch');
+
+
+      try {
+        const res2 = await fetch(data.url);
+        console.log(res2, 'res2');
+      } catch (e) {
+        console.log(e);
+      }
+
+
+
+
+
       //.then(() => history.push('/texts'))
       // .then(res => res.json())
       // .then(res => console.log(res, 'content after fetch'));

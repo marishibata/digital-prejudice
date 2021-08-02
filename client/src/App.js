@@ -4,7 +4,8 @@ import { useState } from 'react';
 import AudioPlayer from './Components/AudioPlayer/AudioPlayer';
 import Description from './Components/Description/Description.js';
 import TextSubmission from './Components/TextSubmission/TextSubmission';
-import TextToMp3 from './Components/TextToMp3/TextToMp3';
+import Text2Mp3 from './Components/TextToMp3/TextToMp3';
+import TextToSpeech from './Components/TextToSpeech/TextToSpeech';
 
 function App() {
 
@@ -23,9 +24,10 @@ function App() {
 
         {/* <Description /> */}
 
-        <TextSubmission passToParent={showTextSubmission} />
-        {/* <TextToMp3 passToParent={showTextSubmission} /> */}
+        {/* <TextSubmission passToParent={showTextSubmission} /> */}
+        {/* <Txt2Mp3 passToParent={showTextSubmission} /> */}
 
+        <TextToSpeech passToParent={showTextSubmission} />
 
       </div>
     </div>

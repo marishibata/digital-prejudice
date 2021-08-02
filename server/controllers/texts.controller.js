@@ -2,6 +2,60 @@ const Text = require('../models/texts.schema')
 const googleTTS = require('google-tts-api');
 var txt2mp3 = require("text-to-mp3");
 
+// Imports the Google Cloud client library
+const textToSpeech = require('@google-cloud/text-to-speech');
+// Import other required libraries
+const fs = require('fs');
+const util = require('util');
+
+// Creates a client
+const client = new textToSpeech.TextToSpeechClient();
+
+// Attempting a new POST request with Google cloud textToSpeecvh
+const postText3 = async (req, res) => {
+  try {
+    const { content } = req.body;
+    // console.log(content);
+    const contentTTSmp3 = await quickStart(content); // this was moved over from postNewAudio
+    // console.log(contentTTSURL);
+    const newText = new Text({
+      content,
+      audio: contentTTSmp3
+    });
+    await newText.save();
+    res.status(201).send(newText);
+  } catch (err) {
+    console.log(err)
+    res.status(400).send('unable to submit text message')
+  }
+}
+
+const quickStart = async (content) => {
+
+  // The text to synthesize
+  // const text = 'hello, world!';
+
+  // Construct the request
+  const request = {
+    input: { text: content },
+    // Select the language and SSML voice gender (optional)
+    voice: { languageCode: 'en-US', ssmlGender: 'NEUTRAL' },
+    // select the type of audio encoding
+    audioConfig: { audioEncoding: 'MP3' },
+  };
+
+  // Performs the text-to-speech request
+  const [response] = await client.synthesizeSpeech(request);
+  // Write the binary audio content to a local file
+  const writeFile = util.promisify(fs.writeFile);
+  await writeFile('output.mp3', response.audioContent, 'binary');
+  console.log('Audio content written to file: output.mp3');
+}
+
+
+
+// -------------- //
+
 // POST request for MVP with node's googleTTS package - when submit button is hit, messages are stored on db
 // will go back to this if new POST request with text-to-mp3 package fails
 const postText = async (req, res) => {
@@ -72,12 +126,13 @@ const getTxt2mp3 = (content) => {
 
 // Alternative option to save locally if Cloudinary doesn't work....
 const saveTxt2mp3 = (content) => {
+  var localMp3Path = "" // put in appropriate file directory "/home/enrico/WebstormProjects/textToMp3/FileName.mp3"
   txtomp3.saveMP3(content, "FileName.mp3", function (err, localMp3Path) {
     if (err) {
       console.log(err);
       return;
     }
-    console.log("File saved :", localMp3Path); //"File saved : /home/enrico/WebstormProjects/textToMp3/FileName.mp3"
+    console.log("File saved :", localMp3Path); // File saved : 
   });
 }
 
@@ -93,4 +148,4 @@ const getText = async (req, res) => {
 }
 
 
-module.exports = { postText, postText2 };
+module.exports = { postText, postText3 };

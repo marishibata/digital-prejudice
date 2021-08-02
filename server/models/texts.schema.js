@@ -8,7 +8,10 @@ const textsSchema = new Schema({
   },
   url: {
     type: String,
-  }
+  },
+  audio: {
+    type: String,
+  },
 })
 
 const Text = mongoose.model('Text', textsSchema);
