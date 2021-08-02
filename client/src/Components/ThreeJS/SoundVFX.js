@@ -17,6 +17,8 @@ const SoundVFX = () => {
   // load a sound and set it as the Audio object's buffer
   const audioLoader = new THREE.AudioLoader();
   // use this if file will be saved in server via saveTxt2mp3 controller
+  // based on the docs it looks like it needs a path and doesn't mention use of external audio file 
+  // but localMp3 path should be replaceable with file URL
   console.log("File from server :", localMp3Path);
   audioLoader.load(localMp3Path, function (buffer) {
     sound.setBuffer(buffer);
