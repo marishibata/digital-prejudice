@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "digital-prejudice-321308",
+  "private_key_id": "beb5ae8376bc5f629e94e0670d23b62f9cf807dd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDcxu0OdotTcKI3\nk3ovQAm6fyyDvkCANMBS4pda3Xy+BvxBDUb0tkrBHYOQm075weFbmjZ/Pip6QwkL\n1HCo3TRo6axxjzr0SGMpvBG+oy59DWFojtRsvfoLv6ULYaYaMzN0bGMGZcQAktSp\njZq7FoLiAD/t/YtFIuEUb6ve8uP0ZUxZU5ByHv/3AK4BttWhxDs7M+wRNf5lX14e\nQzsKIE1NZOkDUzppmd09QbD3wEkUKMBN4tVVXsulySB97frVS/RCGj/W4oVaeJQb\nIvB2H6RAh7Ls9Lo7af3wJbg6R8Y28G6hcEdrbLxOmAQwLjPhdXBWZStM2b0PFLdk\ncS96hNGpAgMBAAECggEAY1PIIWKqCk85XEGojguElPhUYa09vbB9+oxhRgsx7Rid\ncvLzQnOlLD8ICw4kuO9GYXz/Gb4xRDJWppDcYsyqoKzI3YpwHqlWm9c2MIugBbj4\nYx8naQkLry94pKc5IL56Xt3Iq38rcIqezO2deKCHIAC2wm74spEfrJ8VN0gV0MTQ\nUO60H8HSpiuxnUCWJsgT3YK87D5xuqwIeC7nGYKjNBob7KO9ydgp8FT0h8t00laQ\n/YhRuleX5QvGJTtcUPjB1nw3OuM9saiHbW/65sVua35gRXpAm5XBoPKIj5Upcdhx\n8yeZTiZe9uZi0E+Mfbr4ZZwzOG6J2m14nmKNAi+FdQKBgQD1IaxR1LwnrRKiZ2Mp\ncG/PnDIM9iJ+TCajxPat7gXH3LcPT/DznQTPYgHj1vp0OaozWq3SGO6lScZ9Xmla\ndvMoprnYhPAU+284QRJ2C2nJRDeUjeuLyuryk6z9S1FnND6t03OSI00ZoxdoDHud\nlV1zGfm6r/cM62MUZZUStp7bIwKBgQDmkNI4zWH9j/NGI9G8vy42WX/ms/g/Iszi\nAhBczCQil/AoUmVa5wd48MzAk1HNrwJ1ip3OhQUevUpjAPFpcxjcJQ+x1Naosdjg\nKbRNl4RqkRiUWUQmwccN33zBIbRigmv7ugwxiZdvFebkDuippdkgrl7ppf7TPhpW\nTinIEiXiwwKBgQCFhewJPummav3FfK9k+RvOaHRS3xd22CAMANOldgusDCuiqZbD\n+/mMxQPmiUkvWeG9y1z3HiGP4xm9XFnirvxQXlDJAdCMfVDdwYQ+zIS43vGvd4ag\nRM2piIsoBYi3wJuLr6w6JARxPIcZZANJmPyoH7QJ3qOhY+46RALpiJQLJQKBgQDU\nvjYrUV8kbwnC41Qou6LxZT296ruZzguMUuk0Ju0EuntPSU/aQ6hCcLYMzyJBDkXP\nnTqlD1o9Fd4oYftfGGOM5emIZeI3v/pkRDbpDXCSQBWU9JUMyepYo6liLy5ZYwwu\nNmn/33xKdMQaFKObvbsOC7bqEk+CLSByGCc3Q3+PrwKBgQCDlQCI5fbumGL83DVl\nFr4dAQ5oxSuezuMVsIdm1L8y68pkn2kKZdszXosXLtbU0viHOqnscfxA4LQKa1li\nuJvNMgiMeISyFDHfGJqO3W/GpClcDfbSO9p+kVVjxIYnwJQELjIXiwaYT6Yx4YcH\nqp/Ls9oUtn0udOHgms3B3U/rjQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "digital-prejudice@digital-prejudice-321308.iam.gserviceaccount.com",
+  "client_id": "108187096362618079214",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/digital-prejudice%40digital-prejudice-321308.iam.gserviceaccount.com"
+}

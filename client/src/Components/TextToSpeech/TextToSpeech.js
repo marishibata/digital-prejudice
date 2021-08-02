@@ -49,13 +49,9 @@ const TextToSpeech = ({ passToParent }) => {
 
     if (content) {
       console.log('content before fetch: ', content)
-      console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
-      const res = await fetch('https://texttospeech.googleapis.com/v1/text:synthesize', {
+      const res = await fetch('http://localhost:3010/texts', {
         method: 'POST',
-        headers: {
-          "Content-type": "application/json; charset=utf-8",
-          "x-goog-api-key": process.env.GOOGLE_APPLICATION_CREDENTIALS,
-        },
+        headers: { "Content-type": "application/json" },
         body: JSON.stringify({ content })
       })
       console.log('after res after: ', res)

@@ -25,7 +25,6 @@ function App() {
         {/* <Description /> */}
 
         {/* <TextSubmission passToParent={showTextSubmission} /> */}
-        {/* <Txt2Mp3 passToParent={showTextSubmission} /> */}
 
         <TextToSpeech passToParent={showTextSubmission} />
 
