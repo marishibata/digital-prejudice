@@ -2,6 +2,8 @@ const Text = require('../models/texts.schema')
 const textToSpeech = require('@google-cloud/text-to-speech');
 const fs = require('fs');
 const util = require('util');
+const cloudinary = require('cloudinary').v2;
+const streamifier = require('streamifier');
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -17,13 +19,8 @@ const postText3 = async (req, res) => {
   try {
     const { content } = req.body;
     console.log(content);
-    const contentTTSmp3 = await quickStart(content); // this was moved over from postNewAudio
-    // console.log(contentTTSURL);
-    const newText = new Text({
-      content,
-      audio: contentTTSmp3
-    });
-    await newText.save();
+    const newText = await quickStart(content); // this was moved over from postNewAudio
+    // console.log(newText);
     res.status(201).send(newText);
   } catch (err) {
     console.log(err)
@@ -44,60 +41,31 @@ const quickStart = async (content) => {
   const [response] = await client.synthesizeSpeech(request);
   console.log(response, 'response');
 
-  // Write the binary audio content to local filepath - should not need this as we want to upload onto cloudinary
-  // const writeFile = util.promisify(fs.writeFile);
-  // await writeFile('output.mp3', response.audioContent, 'binary');
-  // console.log('Audio content written to file: output.mp3');
-
-  // https://cloudinary.com/documentation/upload_images
-  cloudinary.v2.uploader
-    .upload(response.audioContent, options, {
-      resource_type: "video",
-    })
-    .then((result) => {
-      console.log("successfully sent audio", JSON.stringify(result))
+  // uploading buffer file into cloudinary using .upload_stream instead of .upload
+  let streamUpload = (buffer) => {
+    return new Promise((resolve, reject) => {
+      let stream = cloudinary.uploader.upload_stream({
+        resource_type: "auto",
+        public_id: "content",
+        sign_url: true,
+        use_filename: true,
+        unique_filename: false
+      }, (error, result) => {
+        console.log({ error, result });
+        if (result) resolve(result);
+        else reject(error);
+      });
+      streamifier.createReadStream(buffer).pipe(stream);
     });
+  }
 
+  const upload = await streamUpload(response.audioContent)
+  return await Text.create({
+    url: upload.url,
+    content: content,
+  })
 
 }
-
-
-// -------------- //
-
-// POST request for MVP with node's googleTTS package - when submit button is hit, messages are stored on db
-// will go back to this if new POST request with text-to-mp3 package fails
-// const postText = async (req, res) => {
-//   try {
-//     const { content } = req.body;
-//     // console.log(content);
-//     const contentTTSURL = await getTextToSpeech(content); // this was moved over from postNewAudio
-//     // console.log(contentTTSURL);
-//     const newText = new Text({
-//       content,
-//       url: contentTTSURL
-//     });
-//     await newText.save();
-//     res.status(201).send(newText);
-//   } catch (err) {
-//     console.log(err)
-//     res.status(400).send('unable to submit text message')
-//   }
-// }
-
-// // original googleTTS API Node package working for for MVP - this is currently NOT active
-// // https://www.npmjs.com/package/google-tts-api
-// const getTextToSpeech = async (content) => {
-//   try {
-//     const url = await googleTTS.getAudioUrl(content, { // put "content" param instead of hello world
-//       lang: 'en',
-//       host: 'https://translate.google.com',
-//     });
-//     console.log((url), 'url')
-//     return url;
-//   } catch (err) {
-//     console.error(err);
-//   }
-// };
 
 
 module.exports = { postText3 };

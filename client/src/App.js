@@ -4,7 +4,6 @@ import { useState } from 'react';
 import AudioPlayer from './Components/AudioPlayer/AudioPlayer';
 import Description from './Components/Description/Description.js';
 import TextSubmission from './Components/TextSubmission/TextSubmission';
-import Text2Mp3 from './Components/TextToMp3/TextToMp3';
 import TextToSpeech from './Components/TextToSpeech/TextToSpeech';
 
 function App() {

@@ -67,9 +67,6 @@ const TextSubmission = ({ passToParent }) => {
         console.log(e);
       }
 
-      //.then(() => history.push('/texts'))
-      // .then(res => res.json())
-      // .then(res => console.log(res, 'content after fetch'));
     }
 
   }
