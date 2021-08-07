@@ -4,6 +4,7 @@ const fs = require('fs');
 const util = require('util');
 const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
+const { v4: uuidv4 } = require('uuid');
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -14,13 +15,12 @@ cloudinary.config({
 // Create Google TTS client
 const client = new textToSpeech.TextToSpeechClient();
 
-const postText3 = async (req, res) => {
+const postText = async (req, res) => {
   console.log('before try');
   try {
     const { content } = req.body;
     console.log(content);
-    const newText = await quickStart(content); // this was moved over from postNewAudio
-    // console.log(newText);
+    const newText = await quickStart(content);
     res.status(201).send(newText);
   } catch (err) {
     console.log(err)
@@ -46,7 +46,7 @@ const quickStart = async (content) => {
     return new Promise((resolve, reject) => {
       let stream = cloudinary.uploader.upload_stream({
         resource_type: "auto",
-        public_id: "content",
+        public_id: uuidv4(),
         sign_url: true,
         use_filename: true,
         unique_filename: false

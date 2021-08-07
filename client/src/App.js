@@ -2,8 +2,6 @@ import './App.css';
 import { useState } from 'react';
 
 import AudioPlayer from './Components/AudioPlayer/AudioPlayer';
-import Description from './Components/Description/Description.js';
-import TextSubmission from './Components/TextSubmission/TextSubmission';
 import TextToSpeech from './Components/TextToSpeech/TextToSpeech';
 
 function App() {
@@ -18,13 +16,10 @@ function App() {
 
     <div className="App">
       <div className="App-header">
+        <p></p>
 
         <AudioPlayer audiourl={textSubmission} />
-
-        {/* <Description /> */}
-
-        {/* <TextSubmission passToParent={showTextSubmission} /> */}
-
+        <p></p>
         <TextToSpeech passToParent={showTextSubmission} />
 
       </div>
