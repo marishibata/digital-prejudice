@@ -59,7 +59,7 @@ npm install
 ### Navigate to the project folder
 
 ```
-cd Digital-Prejudice
+cd digital-prejudice
 ```
 
 ### Run server
