@@ -66,7 +66,7 @@ cd digital-prejudice
 
 ```
 cd server
-nodemon server.js
+node server.js
 ```
 
 ### Run client to start app
