@@ -1,6 +1,6 @@
 # Digital Prejudice
 
-### MVP for an interactive web documentary built with React, audio-visualising racist text messages crowdsourced from other users.
+### MVP of an interactive web documentary built with React, audio-visualising racist text messages crowdsourced from other users.
 
 
 # Project Description
