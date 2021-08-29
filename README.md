@@ -30,7 +30,7 @@ To digest the concept,
 
 * This URL is saved onto the database along with the submitted text
 
-* When the user clicks the play button on the front-end, the URL is then retrieved so that users can hear all the messages submitted so far
+* When the user clicks the play button on the front-end, the URL is then retrieved so that users can hear back the submitted message
 
 
 
@@ -53,19 +53,15 @@ cd digital-prejudice
 ### Install the dependencies
 
 ```
-npm install 
-```
-
-### Navigate to the project folder
-
-```
-cd digital-prejudice
+cd client-react
+npm install
+cd ../server
+npm install
 ```
 
 ### Run server
 
 ```
-cd server
 node server.js
 ```
 
