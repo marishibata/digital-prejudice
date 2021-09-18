@@ -1,6 +1,6 @@
 # Digital Prejudice
 
-### MVP for an interactive web documentary built with React, audio-visualising racist text messages crowdsourced from other users.
+### MVP of an interactive web documentary built with React, audio-visualising racist text messages crowdsourced from other users.
 
 
 # Project Description
@@ -12,7 +12,7 @@ Racist comments made on social media platforms are visible and thus widely disse
 
 Vocalising such messages using Text-To-Speech technology amplifies how that could sound like from a person, and makes it more real for those who don't know what it's like to receive one. 
 
-The computerised gives an inhuman effect, which reflects the alienating experience - those who recieve such messages don't know what the sender sounds like because they have never met them.
+The computerised voice gives an inhuman effect, which reflects the alienating experience - those who recieve such messages don't know what the sender sounds like because they have never met them.
 
 The aim of the project is for those who have had similar experiences to contribute to a piece of web-based documentary art, that continues to grow and "document" as more data is crowdsourced.
 
@@ -30,7 +30,8 @@ To digest the concept,
 
 * This URL is saved onto the database along with the submitted text
 
-* When the user clicks the play button on the front-end, the URL is then retrieved so that users can hear all the messages submitted so far
+* When the user clicks the play button on the front-end, the URL is then retrieved so that users can hear back the submitted message
+
 
 
 
@@ -53,20 +54,16 @@ cd digital-prejudice
 ### Install the dependencies
 
 ```
-npm install 
-```
-
-### Navigate to the project folder
-
-```
-cd Digital-Prejudice
+cd client-react
+npm install
+cd ../server
+npm install
 ```
 
 ### Run server
 
 ```
-cd server
-nodemon server.js
+node server.js
 ```
 
 ### Run client to start app
