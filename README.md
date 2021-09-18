@@ -47,7 +47,7 @@ git clone https://github.com/marishibata/Digital-Prejudice.git
 ### Navigate to the folder
 
 ```
-cd Digital-Prejudice
+cd digital-prejudice
 ```
 
 ### Install the dependencies

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
+import { VOICES } from '../Voices';
 
 import {
   StyledFormWrapper,
@@ -49,7 +50,7 @@ const TextToSpeech = ({ passToParent }) => {
 
     if (content) {
       console.log('content before fetch: ', content)
-      const res = await fetch('http://localhost:3010/texts', {
+      const res = await fetch('http://localhost:3010/texts', { // textsMale
         method: 'POST',
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ content })
@@ -59,6 +60,9 @@ const TextToSpeech = ({ passToParent }) => {
       passToParent(data);
       console.log(data, 'after fetch');
     }
+
+
+
 
   }
 
