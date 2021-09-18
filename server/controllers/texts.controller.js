@@ -68,4 +68,4 @@ const quickStart = async (content) => {
 }
 
 
-module.exports = { postText3 };
+module.exports = { postText };
