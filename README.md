@@ -1,6 +1,6 @@
 # Digital Prejudice
 
-### MVP of an interactive web documentary built with React, audio-visualising racist text messages on dating apps crowdsourced from other users.
+### Work-in-progress interactive web documentary built with React, audio-visualising racist text messages on dating apps crowdsourced from other users.
 
 
 # Project Description
@@ -31,6 +31,14 @@ To digest the concept,
 * This URL is saved onto the database along with the submitted text
 
 * When the user clicks the play button on the front-end, the URL is then retrieved so that users can hear back the submitted message
+
+
+
+# Next Steps
+
+* Build 3D models of visemes with Blender, import them into Three.js to apply functionality and WebGL effects
+
+* Figure out algorithm to generate mouth shapes on playback of text-to-speech audio
 
 
 
